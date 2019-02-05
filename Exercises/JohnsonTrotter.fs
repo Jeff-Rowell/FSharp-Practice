@@ -3,7 +3,7 @@ let Traverse (N:'n[]) = seq{
   let ni  = [|for n in N -> 0|]
   let gel = Array.length(N)-1
   yield Some N
-  let rec _Ni g e l = seq{
+  let rec _Ni gel = seq{
     match (l,g) with
     |_ when l<0   -> gn.[g] <- -gn.[g]; yield! _Ni (g-1) e (ni.[g-1] + gn.[g-1])
     |(1,0)        -> yield None
